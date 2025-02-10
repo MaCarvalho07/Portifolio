@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Cabeçalho com navegação -->
+    <header>
+        <div class="navbar">
+            <button onclick="scrollToSection('informacoes')">Informações</button>
+            <button onclick="scrollToSection('projetos')">Projetos</button>
+            <button onclick="scrollToSection('certificados')">Certificados</button>
+            <button onclick="scrollToSection('contatos')">Contatos</button>
+        </div>
+    </header>
+
+    <!-- Seção de Informações Pessoais -->
+    <section id="informacoes" class="container">
+        <img src="images/minhafoto.png" alt="Imagem de Perfil" class="perfil-imagem">
+        <h1 class="animated-text">Matheus Carvalho</h1>
+        <p class="animated-text">Me chamo Matheus Carvalho, tenho 17 anos e estou no meu terceiro semestre de Desenvolvimento de Sistemas. Tenho uma paixão por programação e estou aprendendo HTML, CSS e também tenho conhecimento em Python.</p>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="container">
+        <h2 class="animated-text">Meus Projetos</h2>
+        <div class="projects-carousel">
+            <div class="project-item">
+                <img src="images/CadastroDeFuncionarios.png" alt="Projeto 1">
+                <div class="project-info">
+                    <p>Cadastro de Funcionarios em Python.</p>
+                </div>
+            </div>
+            <div class="project-item">
+                <img src="images/Presente.png" alt="Projeto 2">
+                <div class="project-info">
+                    <p>Este é um presente que fiz para minha namorada em comemoração de um ano de namoro.</p>
+                </div>
+            </div>
+            <!-- Adicione mais projetos conforme necessário -->
+        </div>
+        <div class="carousel-controls">
+            <button id="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <button id="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Seção de Certificados -->
+    <section id="certificados" class="container">
+        <h2 class="animated-text">Meus Certificados</h2>
+        <p class="animated-text">Aqui estão os certificados que eu obtive ao longo da minha jornada de aprendizado.</p>
+        <div class="certificados-grid">
+            <div class="certificado-item" onclick="openModal('CertificadoMundo1.png')">
+                <img src="images/CertificadoMundo1.png" alt="Python Mundo 1">
+                <p>Certificado de Python Mundo 1 - 40 horas</p>
+            </div>
+            <div class="certificado-item" onclick="openModal('CertificadoMundo2.png')">
+                <img src="images/CertificadoMundo2.png" alt="Python Mundo 2">
+                <p>Certificado de Python Mundo 2 - 40 horas</p>
+            </div>
+            <div class="certificado-item" onclick="openModal('CertificadoMundo3.png')">
+                <img src="images/CertificadoMundo3.png" alt="Python Mundo 3">
+                <p>Certificado de Python Mundo 3 - 40 horas</p>
+            </div>
+            <!-- Adicione mais certificados conforme necessário -->
+        </div>
+    </section>
+
+    <!-- Modal para exibir a imagem em tela cheia -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modal-image" class="modal-content" src="" alt="Imagem do Certificado">
+    </div>
+
+    <!-- Seção de Contatos -->
+    <section id="contatos" class="container">
+        <h2 class="animated-text">Contatos</h2>
+        <p class="animated-text">Você pode entrar em contato comigo através dos seguintes canais:</p>
+        <ul>
+            <li>Email: matheus.carvalho@email.com</li>
+            <li>GitHub: <a href="https://github.com/MaCarvalho07" target="_blank">github.com/MaCarvalho07</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/matheus-carvalho-378771316" target="_blank">linkedin.com/in/matheus-carvalho</a></li>
+        </ul>
+    </section>
+
+    <script>
+        // Função para rolar até uma seção
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Carrossel de Projetos
+        let carouselIndex = 0;
+
+        function moveCarousel(direction) {
+            const items = document.querySelectorAll('.project-item');
+            carouselIndex += direction;
+
+            if (carouselIndex < 0) {
+                carouselIndex = items.length - 1;
+            }
+            if (carouselIndex >= items.length) {
+                carouselIndex = 0;
+            }
+
+            const container = document.querySelector('.projects-carousel');
+            const itemWidth = items[0].offsetWidth;
+            container.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+        }
+
+        // Função para adicionar animação de visibilidade para as seções
+        const sections = document.querySelectorAll('.container');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Função para abrir o modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('modal');
+            const modalImage = document.getElementById('modal-image');
+            modal.style.display = 'block';
+            modalImage.src = imageSrc;
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
