@@ -1,106 +1,261 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+/* Resetando margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
+/* Fonte padrão */
+body {
+    font-family: 'PT Serif', serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    color: #fff;
+    min-height: 100vh;
+}
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><button onclick="scrollToSection('informacoes')">Informações</button></li>
-                <li><button onclick="scrollToSection('projetos')">Projetos</button></li>
-                <li><button onclick="scrollToSection('certificados')">Certificados</button></li>
-                <li><button onclick="scrollToSection('contatos')">Contatos</button></li>
-            </ul>
-        </nav>
-    </header>
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg, #2b2d42, #6a0572);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+}
 
-    <section id="informacoes" class="container">
-        <img src="images/minhafoto.png" alt="Imagem de Perfil" class="perfil-imagem">
-        <h1>Matheus Carvalho</h1>
-        <p>Me chamo Matheus Carvalho, tenho 17 anos e estou no meu terceiro semestre de Desenvolvimento de Sistemas...</p>
-    </section>
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-    <section id="projetos" class="container">
-        <h2>Meus Projetos</h2>
-        <div class="projects-carousel">
-            <div class="project-item">
-                <img src="images/CadastroDeFuncionarios.png" alt="Projeto 1">
-                <div class="project-info">
-                    <p>Cadastro de Funcionários em Python.</p>
-                </div>
-            </div>
-            <div class="project-item">
-                <img src="images/Presente.png" alt="Projeto 2">
-                <div class="project-info">
-                    <p>Presente para minha namorada.</p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button id="prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <button id="next" onclick="moveCarousel(1)">&#10095;</button>
-        </div>
-    </section>
+nav li {
+    list-style: none;
+}
 
-    <section id="certificados" class="container">
-        <h2>Meus Certificados</h2>
-        <div class="certificados-grid">
-            <div class="certificado-item" onclick="openModal('images/CertificadoMundo1.png')">
-                <img src="images/CertificadoMundo1.png" alt="Certificado 1">
-                <p>Certificado de Python Mundo 1 - 40 horas</p>
-            </div>
-            <div class="certificado-item" onclick="openModal('images/CertificadoMundo2.png')">
-                <img src="images/CertificadoMundo2.png" alt="Certificado 2">
-                <p>Certificado de Python Mundo 2 - 40 horas</p>
-            </div>
-            <div class="certificado-item" onclick="openModal('images/CertificadoMundo3.png')">
-                <img src="images/CertificadoMundo3.png" alt="Certificado 3">
-                <p>Certificado de Python Mundo 3 - 40 horas</p>
-            </div>
-        </div>
-    </section>
+nav button {
+    background: transparent;
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+}
 
-    <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img id="modal-image" class="modal-content" src="" alt="Imagem do Certificado">
-    </div>
+nav button:hover {
+    background: #6a0572;
+}
 
-    <section id="contatos" class="container">
-        <h2>Contatos</h2>
-        <p>Email: matheus.carvalho@email.com</p>
-        <p>GitHub: <a href="https://github.com/MaCarvalho07" target="_blank">github.com/MaCarvalho07</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/matheus-carvalho-378771316" target="_blank">linkedin.com/in/matheus-carvalho</a></p>
-    </section>
+/* Seções */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    transition: opacity 0.5s ease-in-out;
+}
 
-    <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-        let carouselIndex = 0;
-        function moveCarousel(direction) {
-            const items = document.querySelectorAll('.project-item');
-            carouselIndex += direction;
-            if (carouselIndex < 0) carouselIndex = items.length - 1;
-            if (carouselIndex >= items.length) carouselIndex = 0;
-            document.querySelector('.projects-carousel').style.transform = `translateX(-${carouselIndex * 100}%)`;
-        }
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
 
-        function openModal(imageSrc) {
-            document.getElementById('modal').style.display = 'block';
-            document.getElementById('modal-image').src = imageSrc;
-        }
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-    </script>
-</body>
+/* Seção de Informações */
+#informacoes {
+    text-align: center;
+}
 
-</html>
+.perfil-imagem {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+}
+
+/* Seção de Projetos */
+#projetos {
+    text-align: center;
+}
+
+.projects-carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-item {
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.project-info {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.carousel-controls button {
+    background: #2b2d42;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.carousel-controls button:hover {
+    background: #6a0572;
+}
+
+/* Seção de Certificados */
+#certificados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.certificados-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.certificado-item {
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.certificado-item:hover {
+    transform: scale(1.05);
+}
+
+.certificado-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.certificado-item p {
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Seção de Contatos */
+#contatos {
+    background: linear-gradient(90deg, #2b2d42, #6a0572);
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 2px solid #ddd;
+}
+
+#contatos ul {
+    list-style-type: none;
+}
+
+#contatos li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+#contatos a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#contatos a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .projects-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 100%;
+    }
+
+    .certificados-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificado-item {
+        width: 100%;
+    }
+
+    .perfil-imagem {
+        width: 120px;
+        height: 120px;
+    }
+}
