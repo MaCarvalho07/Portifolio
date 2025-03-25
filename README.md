@@ -34,12 +34,7 @@ O design do portfólio foi pensado para proporcionar uma experiência agradável
 - Formulário de contato para possíveis oportunidades
 - Design responsivo para mobile e desktop
 
-## 🔧 Como Executar
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-2. Acesse a pasta do projeto e abra o arquivo `index.html` no navegador.
+
 
 ## 📩 Contato
 Caso queira entrar em contato comigo, me encontre no [LinkedIn](https://www.linkedin.com/in/matheus-carvalho-378771316/) ou envie um e-mail para **seu-email@example.com**.
