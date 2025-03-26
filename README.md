@@ -37,7 +37,7 @@ O design do portfólio foi pensado para proporcionar uma experiência agradável
 
 
 ## 📩 Contato
-Caso queira entrar em contato comigo, me encontre no [LinkedIn](https://www.linkedin.com/in/matheus-carvalho-378771316/) ou envie um e-mail para **seu-email@example.com**.
+Caso queira entrar em contato comigo, me encontre no [LinkedIn](https://www.linkedin.com/in/matheus-carvalho-378771316/) .
 
 ---
 Espero que goste do meu portfólio! Qualquer feedback é bem-vindo. 😊
