@@ -662,6 +662,8 @@ body.light-mode #home img#notebook-2-white {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 3.2rem;
+  color: var(--primary-color);
+  font-size: 2rem;
 }
 
 #projects .card {
@@ -766,6 +768,11 @@ body.light-mode #home img#notebook-2-white {
 
 #projects .button {
   margin: 6rem auto 0;
+}
+
+#projects .social-projects{
+  margin-top: 100px;
+  color: var(--primary-color);
 }
 
 /*===== KNOWLEDGE ===============================================*/
