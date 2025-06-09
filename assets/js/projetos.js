@@ -26,6 +26,7 @@ function projetos(section) {
           </a>
           <p>Projeto feito em python para um evento utilizei as bibliotecas PyQt5 e PyGame</p> 
         </div>
+
         <div class="card"
           <h3>GeekFest</h3>
           <a href="https://github.com/MaCarvalho07/GeekFest">
@@ -33,6 +34,7 @@ function projetos(section) {
           </a>
           <p>Projeto feito para uma atividade do curso utilizando apenas HTML e CSS</p> 
         </div>
+
         <div class="card"
           <h3>AluraPlus Clone</h3>
           <a href="https://github.com/MaCarvalho07/Alura-Plus-Clone">
@@ -40,13 +42,15 @@ function projetos(section) {
           </a>
           <p>Projeto feito para uma atividade do curso utilizando apenas HTML e CSS</p> 
         </div>
+
         <div class="card"
           <h3>xNeedWare</h3>
-          <a https://github.com/Projeto-xNeedWare/projetotcc">
-            
+          <a href="https://github.com/Projeto-xNeedWare/projetotcc">
+            <img src="./assets/images/xneedware_landing_page.png" alt="xNeedWare">
           </a>
           <p>Projeto de conclusão de curso. Ainda em desenvolvimento, clique para saber mais</p> 
         </div>
+      </div>
 
         
         
@@ -54,7 +58,6 @@ function projetos(section) {
         
         
         
-      </div>
       
       <div class="social-projects">
         <h1> Acesse meu Github para saber mais </h1>
