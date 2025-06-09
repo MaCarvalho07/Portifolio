@@ -10,14 +10,14 @@
 
 :root {
   --hue: 90;
-  --primary-color: hsl(270, 92%, 43%);
-  --primary-hover: hsl(270, 92%, 33%);
+  --primary-color: #F0EDEE;
+  --primary-hover: #07393C;
   --secundary-color: hsl(0, 0%, 5%);
   --third-color: hsla(0, 0%, 100%, 0.1);
-  --bg-color: hsl(0, 0%, 8%);
+  --bg-color: #0A090C ;
 
   --headline: hsl(0, 0%, 100%);
-  --paragraph: hsla(0, 0%, 100%, 0.658);
+  --paragraph: hsla(0, 0%, 59%, 0.658);
   --paragraph-2: hsl(calc(var(--hue) + 10), 14%, 97%);
 
   font-size: 62.5%;
@@ -772,8 +772,15 @@ body.light-mode #home img#notebook-2-white {
 
 #projects .social-projects{
   margin-top: 100px;
-  color: var(--primary-color);
+  color: var();
 }
+
+#projects .social-projects svg 
+{
+  margin-top: 50px;
+}
+  
+
 
 /*===== KNOWLEDGE ===============================================*/
 

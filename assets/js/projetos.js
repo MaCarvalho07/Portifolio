@@ -51,13 +51,6 @@ function projetos(section) {
           <p>Projeto de conclusão de curso. Ainda em desenvolvimento, clique para saber mais</p> 
         </div>
       </div>
-
-        
-        
-        
-        
-        
-        
       
       <div class="social-projects">
         <h1> Acesse meu Github para saber mais </h1>
