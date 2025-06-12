@@ -22,7 +22,9 @@ function projetos(section) {
         <div class="card"
           <h3>DJC-GAMES</h3>
           <a href="https://github.com/MaCarvalho07/DJC-GAMES">
-            <img src="./assets/images/DJC-GAMES.png" alt="DJC-GAMES">
+            
+            <img src="./assets/images/DJC-GAMES.png"  djc games alt="DJC-GAMES">
+
           </a>
           <p>Projeto feito em python para um evento utilizei as bibliotecas PyQt5 e PyGame</p> 
         </div>

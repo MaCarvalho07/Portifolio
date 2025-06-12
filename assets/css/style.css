@@ -662,7 +662,7 @@ body.light-mode #home img#notebook-2-white {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 3.2rem;
-  color: var(--primary-color);
+  color: var(--paragraph);
   font-size: 2rem;
 }
 
@@ -695,8 +695,12 @@ body.light-mode #home img#notebook-2-white {
   height: 20rem;
   object-fit: cover;
   border-radius: 0.6rem;
+  filter: blur(2px) grayscale(1);
+  transition: 1s;
+}
 
-  transition: 300ms;
+#projects .card img:hover {
+  filter: none;
 }
 
 #projects .card:hover > .img-wrapper img {
@@ -772,7 +776,7 @@ body.light-mode #home img#notebook-2-white {
 
 #projects .social-projects{
   margin-top: 100px;
-  color: var();
+  color: var(--paragraph);
 }
 
 #projects .social-projects svg 
