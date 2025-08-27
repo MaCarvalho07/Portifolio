@@ -30,19 +30,19 @@ function projetos(section) {
         </div>
 
         <div class="card"
-          <h3>GeekFest</h3>
-          <a href="https://github.com/MaCarvalho07/GeekFest">
-            <img src="./assets/images/GeekFest.png" alt="GeekFest">
+          <h3>Firemap Inspire</h3>
+          <a href="https://github.com/MaCarvalho07/FireMap_Inspire">
+            <img src="./assets/images/Firemap_inspire.png" alt="Firemap">
           </a>
-          <p>Projeto feito para uma atividade do curso utilizando apenas HTML e CSS</p> 
+          <p>Projeto feito com objetivo de monitorar focos de incendio de forma acessivel e em tempo real.</p> 
         </div>
 
         <div class="card"
-          <h3>AluraPlus Clone</h3>
-          <a href="https://github.com/MaCarvalho07/Alura-Plus-Clone">
-            <img src="./assets/images/AluraPlus-Clone.png" alt="AluraPlus">
+          <h3>Always Far </h3>
+          <a href="https://github.com/MaCarvalho07/Always-Far">
+            <img src="./assets/images/Always-far.png" alt="Always-far">
           </a>
-          <p>Projeto feito para uma atividade do curso utilizando apenas HTML e CSS</p> 
+          <p>Projeto feito imaginando uma loja streetwear utilizando apenas HTML, CSS e Javascript</p> 
         </div>
 
         <div class="card"
